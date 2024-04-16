@@ -18,7 +18,7 @@ import frc.robot.Vector2d;
 public class SwerveDrive extends SubsystemBase{
 
     private final double WHEEL_DIAMETER = 4 / 12.0; // (feet)
-    private double m_maxDrivePercentSpeed = .37; // (percent) Max speed for driving when using percent speed
+    private double m_maxDrivePercentSpeed = .18; // (percent) Max speed for driving when using percent speed
     private double MAX_RPS = .225; // (rotations/sec) Max rotation speed when using percent speed to rotate drive train
     private double MAX_DRIVE_ROTATION_EXPONENT = .8; // The power to raise the chassis rotation speed to with lookVector driving at full drive speed
     private double MIN_DRIVE_ROTATION_EXPONENT = .5; // The power to reaise the chassis rotation speed to with lookVector driving while stationary
