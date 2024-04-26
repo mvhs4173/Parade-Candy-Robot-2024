@@ -97,7 +97,7 @@ public class Robot extends TimedRobot {
 
     RobotContainer.ledStrip.start(); // Start constantly updating LEDs to the data the strip was last given
     // RobotContainer.cannon.setIsExtended(false);
-    RobotContainer.cmdRunLEDPatrioticPattern.schedule();
+    //RobotContainer.cmdRunLEDPatrioticPattern.schedule();
   }
 
   /** This function is called periodically during operator control. */

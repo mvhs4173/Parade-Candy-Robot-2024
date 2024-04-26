@@ -7,7 +7,7 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.ApriltagInfo;
 import frc.robot.subsystems.SwerveDrive;
-import frc.robot.subsystems.ApriltagInfo.ApriltagRecord;
+//import frc.robot.subsystems.ApriltagInfo.ApriltagRecord;
 
 public class GoToAprilTag extends Command {
   int m_apriltagIdOfInterest;

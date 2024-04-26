@@ -5,14 +5,14 @@
 package frc.robot.subsystems;
 
 import com.revrobotics.CANSparkMax;
-import com.revrobotics.CANSparkMaxLowLevel.MotorType;
-import com.revrobotics.SparkMaxPIDController;
+import com.revrobotics.CANSparkLowLevel.MotorType;
+import com.revrobotics.SparkPIDController;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class NeoMotor extends SubsystemBase {
   private CANSparkMax m_sparkMax;
-  private SparkMaxPIDController m_pidController;
+  private SparkPIDController m_pidController;
   /** Creates a new NeoMotor. */
   public NeoMotor(int motorID) {
     m_sparkMax = new CANSparkMax(motorID, MotorType.kBrushless);

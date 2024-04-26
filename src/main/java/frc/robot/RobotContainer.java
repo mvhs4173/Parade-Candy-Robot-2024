@@ -4,7 +4,7 @@
 
 package frc.robot;
 
-import java.awt.Color;
+//import java.awt.Color;
 
 import com.kauailabs.navx.frc.AHRS;
 
@@ -17,12 +17,12 @@ import edu.wpi.first.wpilibj.SPI;
 // import edu.wpi.first.wpilibj.PneumaticsModuleType;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.DriveViaXboxController;
-import frc.robot.commands.LEDFlash;
+//import frc.robot.commands.LEDFlash;
 // import frc.robot.commands.LaunchCandy;
-import frc.robot.commands.RunLEDPatrioticPattern;
+//import frc.robot.commands.RunLEDPatrioticPattern;
 import frc.robot.commands.SpinMotorHold;
-import frc.robot.subsystems.ApriltagInfo;
-import frc.robot.commands.GoToAprilTag;
+//import frc.robot.subsystems.ApriltagInfo;
+//import frc.robot.commands.GoToAprilTag;
 // import frc.robot.subsystems.CandyCannon;
 import frc.robot.subsystems.LEDStrip;
 import frc.robot.subsystems.NeoMotor;
@@ -40,7 +40,7 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
-  private ApriltagInfo m_apriltagInfo;
+  //private ApriltagInfo m_apriltagInfo;
   // JOYSTICKS/CONTROLLERS
   public static XboxController m_xboxController = new XboxController(RobotMap.xboxControllerPort);
 
@@ -82,16 +82,16 @@ public class RobotContainer {
   // public static CandyCannon cannon = new CandyCannon(cannonDoubleSolenoid);
 
   // COMMANDS
-  public static RunLEDPatrioticPattern cmdRunLEDPatrioticPattern = new RunLEDPatrioticPattern(ledStrip);
+  //public static RunLEDPatrioticPattern cmdRunLEDPatrioticPattern = new RunLEDPatrioticPattern(ledStrip);
   //public static FlashLEDLaunchPattern cmdFlashLEDLaunchPattern = new FlashLEDLaunchPattern(ledStrip);
-  public static LEDFlash ledFlash = new LEDFlash(ledStrip, new Color(255,0,0), new Color(0,255,0), 1.0);
+  //public static LEDFlash ledFlash = new LEDFlash(ledStrip, new Color(255,0,0), new Color(0,255,0), 1.0);
   // public static LaunchCandy cmdLaunchCandy = new LaunchCandy(cannon, ledFlash, cmdRunLEDPatrioticPattern);
   public static NeoMotor m_neoMotor = new NeoMotor(RobotMap.flagID);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     System.out.println("@@@ naxX.getYaw=" + navX.getYaw() + " @@@");
-    m_apriltagInfo = new ApriltagInfo(Constants.TEAM_NUMBER, "robot", new int[]{1, 2, 3, 4, 5, 6, 7, 8});
+    //m_apriltagInfo = new ApriltagInfo(Constants.TEAM_NUMBER, "robot", new int[]{1, 2, 3, 4, 5, 6, 7, 8});
     // Configure the button bindings
     getSwerveDrive().resetModules();
     configureButtonBindings();
@@ -108,9 +108,9 @@ public class RobotContainer {
     System.out.println("configureButtonBinds [no buttons configured]");
     //launchButton.whileTrue(new GoToAprilTag(m_swerveDrive));
 
-    //launchButton.toggleOnTrue(new SpinMotorHold(m_neoMotor, RobotMap.flagVoltage));
-  JoystickButton b = new JoystickButton(m_xboxController, XboxController.Button.kB.value);
-  b.toggleOnTrue(cmdRunLEDPatrioticPattern);
+    launchButton.toggleOnTrue(new SpinMotorHold(m_neoMotor, RobotMap.flagVoltage));
+  //JoystickButton b = new JoystickButton(m_xboxController, XboxController.Button.kB.value);
+  //b.toggleOnTrue(cmdRunLEDPatrioticPattern);
 }
 
   /**
