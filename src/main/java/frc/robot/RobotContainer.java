@@ -19,7 +19,7 @@ import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.DriveViaXboxController;
 //import frc.robot.commands.LEDFlash;
 // import frc.robot.commands.LaunchCandy;
-//import frc.robot.commands.RunLEDPatrioticPattern;
+import frc.robot.commands.RunLEDPatrioticPattern;
 import frc.robot.commands.SpinMotorHold;
 //import frc.robot.subsystems.ApriltagInfo;
 //import frc.robot.commands.GoToAprilTag;
@@ -50,7 +50,7 @@ public class RobotContainer {
   // MISCELLANEOUS
   // public static PneumaticHub pHub = new PneumaticHub(RobotMap.pcm);
   // public static Compressor phCompressor = new Compressor(RobotMap.pcm, PneumaticsModuleType.REVPH);
-  public static LEDStrip ledStrip = new LEDStrip(RobotMap.ledStrip, 300);
+  public static LEDStrip ledStrip = new LEDStrip(RobotMap.ledStrip, 60);
 
   // MOTOR CONTROLLERS
   public static TalonSRXMotorController driveMotorFrontRight = new TalonSRXMotorController(RobotMap.driveMotorFrontRight),
@@ -82,7 +82,7 @@ public class RobotContainer {
   // public static CandyCannon cannon = new CandyCannon(cannonDoubleSolenoid);
 
   // COMMANDS
-  //public static RunLEDPatrioticPattern cmdRunLEDPatrioticPattern = new RunLEDPatrioticPattern(ledStrip);
+  public static RunLEDPatrioticPattern cmdRunLEDPatrioticPattern = new RunLEDPatrioticPattern(ledStrip);
   //public static FlashLEDLaunchPattern cmdFlashLEDLaunchPattern = new FlashLEDLaunchPattern(ledStrip);
   //public static LEDFlash ledFlash = new LEDFlash(ledStrip, new Color(255,0,0), new Color(0,255,0), 1.0);
   // public static LaunchCandy cmdLaunchCandy = new LaunchCandy(cannon, ledFlash, cmdRunLEDPatrioticPattern);
@@ -109,8 +109,8 @@ public class RobotContainer {
     //launchButton.whileTrue(new GoToAprilTag(m_swerveDrive));
 
     launchButton.toggleOnTrue(new SpinMotorHold(m_neoMotor, RobotMap.flagVoltage));
-  //JoystickButton b = new JoystickButton(m_xboxController, XboxController.Button.kB.value);
-  //b.toggleOnTrue(cmdRunLEDPatrioticPattern);
+    JoystickButton b = new JoystickButton(m_xboxController, XboxController.Button.kB.value);
+    b.toggleOnTrue(cmdRunLEDPatrioticPattern);
 }
 
   /**

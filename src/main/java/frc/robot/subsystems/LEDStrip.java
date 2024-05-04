@@ -65,26 +65,31 @@ public class LEDStrip extends SubsystemBase {
         for (int i = 0; i < ledBuffer.getLength(); i++) {
             int indexInPattern = (i + 1) % 20;
             
-            if (indexInPattern >= 0 && indexInPattern <= 3) {
+            if (indexInPattern >= 1 && indexInPattern <= 2) {
                // ledBuffer.setRGB(i, 255, 0, 0); // led
                ledBuffer.setLED(i, Color.kRed);
 
-            } else if (indexInPattern == 4){
+            } else if (indexInPattern >= 4 && indexInPattern <=5){
                // ledBuffer.setRGB(i, 120, 120, 0); // nothing
-               ledBuffer.setLED(i, Color.kViolet);;
-            } else if (indexInPattern >= 5 && indexInPattern <= 8 ){
+               ledBuffer.setLED(i, Color.kWhite);;
+            } else if (indexInPattern >= 6 && indexInPattern <= 7 ){
                // ledBuffer.setRGB(i, 0, 255, 0); // Green
                ledBuffer.setLED(i, Color.kGreen);
-            } else if (indexInPattern == 9){
+            } else if (indexInPattern >= 8 && indexInPattern <=9){
                // ledBuffer.setRGB(i, 120, 120, 0); // nothing
-               ledBuffer.setLED(i, Color.kViolet);
-            } else if (indexInPattern >= 10 && indexInPattern <=13){
-               ledBuffer.setLED(i, Color.kBlue);
-            } else if (indexInPattern ==14){
-                ledBuffer.setLED(i, Color.kViolet);
-            } else if (indexInPattern >= 15 && indexInPattern <=19){
-                ledBuffer.setLED(i, Color.kFuchsia);
-            }
+               ledBuffer.setLED(i, Color.kRed);
+            } else if (indexInPattern >= 10 && indexInPattern <=11){
+               ledBuffer.setLED(i, Color.kWhite);
+            } else if (indexInPattern >=12 && indexInPattern <=13){
+                ledBuffer.setLED(i, Color.kGreen);
+            } else if (indexInPattern >= 14 && indexInPattern <=15){
+                ledBuffer.setLED(i, Color.kRed);
+            } else if (indexInPattern >= 16 && indexInPattern <=17){
+                ledBuffer.setLED(i, Color.kWhite);
+            } else if (indexInPattern >= 18 && indexInPattern <=19){
+                ledBuffer.setLED(i, Color.kGreen);
+            } else if (indexInPattern >= 20 && indexInPattern <=21)
+                ledBuffer.setLED(i, Color.kWhite);
         }
 
         ledStrip.setData(ledBuffer); // Give the led strip the data from the buffer
