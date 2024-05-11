@@ -60,7 +60,13 @@ public class LEDStrip extends SubsystemBase {
         ledStrip.setData(ledBuffer);
     }
 
-    
+    public void setColors(Color... colors){
+        for(int i = 0; 1 < ledBuffer.getLength(); i++){
+            ledBuffer.setLED(i, colors[i % colors.length]);
+        }
+        ledStrip.setData(ledBuffer); //Give the led strip the data from the buffer
+    }
+
     public void setToChristmasColorPattern() {
         for (int i = 0; i < ledBuffer.getLength(); i++) {
             int indexInPattern = (i + 1) % 20;
@@ -120,6 +126,20 @@ public class LEDStrip extends SubsystemBase {
         ledStrip.setData(ledBuffer); // Give the led strip the data from the buffer
     }
 
+    public void decrementPattern() {
+        Color previousValue = ledBuffer.getLED(0);
+        for (int i = ledBuffer.getLength() - 1; i >= 0; i--) {
+            Color swap = ledBuffer.getLED(i);
+            ledBuffer.setLED(i, previousValue);
+            previousValue = swap;
+        }
+    }
+    
+    @Override 
+    public void periodic(){
+        decrementPattern();
+        ledStrip.setData(ledBuffer);
+    }
     
     private int loopLEDIndex(int i) {
         if (i >= ledBuffer.getLength()) {
