@@ -10,12 +10,12 @@ import com.revrobotics.SparkPIDController;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class NeoMotor extends SubsystemBase {
+public class BrushedMotor extends SubsystemBase {
   private CANSparkMax m_sparkMax;
   private SparkPIDController m_pidController;
   /** Creates a new NeoMotor. */
-  public NeoMotor(int motorID) {
-    m_sparkMax = new CANSparkMax(motorID, MotorType.kBrushless);
+  public BrushedMotor(int motorID) {
+    m_sparkMax = new CANSparkMax(motorID, MotorType.kBrushed);
     m_pidController = m_sparkMax.getPIDController();
     setVoltage(0);
   }

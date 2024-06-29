@@ -27,5 +27,5 @@ public class RobotMap {
     
     // flag
     public static int flagID = 54;
-    public static double flagVoltage = -6;
+    public static double flagVoltage = 3;
 }

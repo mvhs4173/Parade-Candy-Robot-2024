@@ -5,23 +5,23 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.subsystems.NeoMotor;
+import frc.robot.subsystems.BrushedMotor;
 
 public class SpinMotorHold extends Command {
-  private NeoMotor m_NeoMotor;
+  private BrushedMotor m_motor;
   private double m_voltage;
   /** Creates a new SpinMotorHold. */
-  public SpinMotorHold(NeoMotor neoMotor, double voltage) {
+  public SpinMotorHold(BrushedMotor motor, double voltage) {
     // Use addRequirements() here to declare subsystem dependencies.
-    m_NeoMotor = neoMotor;
+    m_motor = motor;
     m_voltage = voltage;
-    addRequirements(m_NeoMotor);
+    addRequirements(m_motor);
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    m_NeoMotor.setVoltage(m_voltage);
+    m_motor.setVoltage(m_voltage);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
@@ -33,7 +33,7 @@ public class SpinMotorHold extends Command {
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    m_NeoMotor.setVoltage(0);
+    m_motor.setVoltage(0);
   }
 
   // Returns true when the command should end.

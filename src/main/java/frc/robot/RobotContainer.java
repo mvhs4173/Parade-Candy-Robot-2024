@@ -25,7 +25,7 @@ import frc.robot.commands.SpinMotorHold;
 //import frc.robot.commands.GoToAprilTag;
 // import frc.robot.subsystems.CandyCannon;
 import frc.robot.subsystems.LEDStrip;
-import frc.robot.subsystems.NeoMotor;
+import frc.robot.subsystems.BrushedMotor;
 import frc.robot.subsystems.SwerveDrive;
 import frc.robot.subsystems.SwerveModule;
 import frc.robot.subsystems.TalonSRXMotorController;
@@ -86,7 +86,7 @@ public class RobotContainer {
   //public static FlashLEDLaunchPattern cmdFlashLEDLaunchPattern = new FlashLEDLaunchPattern(ledStrip);
   //public static LEDFlash ledFlash = new LEDFlash(ledStrip, new Color(255,0,0), new Color(0,255,0), 1.0);
   // public static LaunchCandy cmdLaunchCandy = new LaunchCandy(cannon, ledFlash, cmdRunLEDPatrioticPattern);
-  public static NeoMotor m_neoMotor = new NeoMotor(RobotMap.flagID);
+  public static BrushedMotor m_neoMotor = new BrushedMotor(RobotMap.flagID);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
