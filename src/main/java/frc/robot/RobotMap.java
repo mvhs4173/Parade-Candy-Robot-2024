@@ -5,7 +5,8 @@ public class RobotMap {
     public static int xboxControllerPort = 0;
 
     // Button IDs
-    public static int launchButton = 1;
+    public static int normalSpeedShootButton = 1;
+    public static int highSpeedShootButton = 2;
 
     // Motor Controller CAN IDs
     public static int driveMotorFrontRight = 2,
@@ -26,6 +27,7 @@ public class RobotMap {
                       cannonReverseChannel = 1;
     
     // flag
-    public static int flagID = 54;
-    public static double flagVoltage = 3;
+    public static int flywheelMotorID = 54;
+    public static double normalFlywheelVoltage = 3;
+    public static double fastFlywheelVoltage = 12;
 }

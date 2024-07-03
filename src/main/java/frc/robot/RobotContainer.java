@@ -45,7 +45,8 @@ public class RobotContainer {
   public static XboxController m_xboxController = new XboxController(RobotMap.xboxControllerPort);
 
   // BUTTONS
-  public static JoystickButton launchButton = new JoystickButton(m_xboxController, RobotMap.launchButton);
+  public static JoystickButton normalSpeedShootButton = new JoystickButton(m_xboxController, RobotMap.normalSpeedShootButton);
+  public static JoystickButton highSpeedShootButton = new JoystickButton(m_xboxController, RobotMap.highSpeedShootButton);
 
   // MISCELLANEOUS
   // public static PneumaticHub pHub = new PneumaticHub(RobotMap.pcm);
@@ -86,7 +87,7 @@ public class RobotContainer {
   //public static FlashLEDLaunchPattern cmdFlashLEDLaunchPattern = new FlashLEDLaunchPattern(ledStrip);
   //public static LEDFlash ledFlash = new LEDFlash(ledStrip, new Color(255,0,0), new Color(0,255,0), 1.0);
   // public static LaunchCandy cmdLaunchCandy = new LaunchCandy(cannon, ledFlash, cmdRunLEDPatrioticPattern);
-  public static BrushedMotor m_neoMotor = new BrushedMotor(RobotMap.flagID);
+  public static BrushedMotor m_brushedMotor = new BrushedMotor(RobotMap.flywheelMotorID);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -108,7 +109,8 @@ public class RobotContainer {
     System.out.println("configureButtonBinds [no buttons configured]");
     //launchButton.whileTrue(new GoToAprilTag(m_swerveDrive));
 
-    launchButton.toggleOnTrue(new SpinMotorHold(m_neoMotor, RobotMap.flagVoltage));
+    normalSpeedShootButton.toggleOnTrue(new SpinMotorHold(m_brushedMotor, RobotMap.normalFlywheelVoltage));
+    highSpeedShootButton.toggleOnTrue(new SpinMotorHold(m_brushedMotor, RobotMap.fastFlywheelVoltage));
     JoystickButton b = new JoystickButton(m_xboxController, XboxController.Button.kB.value);
     b.toggleOnTrue(cmdRunLEDPatrioticPattern);
 }
