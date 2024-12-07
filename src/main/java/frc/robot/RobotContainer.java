@@ -16,7 +16,9 @@ import edu.wpi.first.wpilibj.SPI;
 // import edu.wpi.first.wpilibj.PneumaticsControlModule;
 // import edu.wpi.first.wpilibj.PneumaticsModuleType;
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.util.Color;
 import frc.robot.commands.DriveViaXboxController;
+import frc.robot.commands.LEDFlash;
 //import frc.robot.commands.LEDFlash;
 // import frc.robot.commands.LaunchCandy;
 import frc.robot.commands.RunLEDPatrioticPattern;
@@ -83,6 +85,7 @@ public class RobotContainer {
 
   // COMMANDS
   public static RunLEDPatrioticPattern cmdRunLEDPatrioticPattern = new RunLEDPatrioticPattern(ledStrip);
+  public static LEDFlash cmdLEDFlash = new LEDFlash(ledStrip, new Color(255, 0, 0), new Color(0, 255, 0), 5.0);
   //public static FlashLEDLaunchPattern cmdFlashLEDLaunchPattern = new FlashLEDLaunchPattern(ledStrip);
   //public static LEDFlash ledFlash = new LEDFlash(ledStrip, new Color(255,0,0), new Color(0,255,0), 1.0);
   // public static LaunchCandy cmdLaunchCandy = new LaunchCandy(cannon, ledFlash, cmdRunLEDPatrioticPattern);
@@ -111,6 +114,9 @@ public class RobotContainer {
     launchButton.toggleOnTrue(new SpinMotorHold(m_neoMotor, RobotMap.flagVoltage));
     JoystickButton b = new JoystickButton(m_xboxController, XboxController.Button.kB.value);
     b.toggleOnTrue(cmdRunLEDPatrioticPattern);
+
+    JoystickButton a = new JoystickButton(m_xboxController, XboxController.Button.kA.value);
+    a.onTrue(cmdLEDFlash);
 }
 
   /**

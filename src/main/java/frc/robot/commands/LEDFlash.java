@@ -5,10 +5,11 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.Timer;
+import edu.wpi.first.wpilibj.util.Color;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.LEDStrip;
 
-import java.awt.Color;
+//import java.awt.Color;
 
 public class LEDFlash extends Command {
   /** Creates a new LEDFlash. */
@@ -24,7 +25,7 @@ public class LEDFlash extends Command {
 
   public LEDFlash(LEDStrip ledStrip, Color color1, Color color2, double time) {
     // Use addRequirements() here to declare subsystem dependencies.
-    // addRequirements(ledStrip);
+    addRequirements(ledStrip);
     m_color1 = color1;
     m_color2 = color2;
     m_ledStrip = ledStrip; 
@@ -44,11 +45,11 @@ public class LEDFlash extends Command {
     double time = m_timer.get();
     time = time - Math.floor(time/0.50) * 0.50;
     if (time < 0.22) {
-      m_ledStrip.setAllToColor(m_color1.getRed(), m_color1.getGreen(), m_color1.getBlue());
+      m_ledStrip.setAllToColor(m_color1.red, m_color1.green, m_color1.blue);
     } else if (time < .25) {
       m_ledStrip.turnAllOff();
     } else if (time < 0.47) {
-      m_ledStrip.setAllToColor(m_color2.getRed(), m_color2.getGreen(), m_color2.getBlue());
+      m_ledStrip.setAllToColor(m_color2.red, m_color2.green, m_color2.blue);
     } else {
       m_ledStrip.turnAllOff();
     }

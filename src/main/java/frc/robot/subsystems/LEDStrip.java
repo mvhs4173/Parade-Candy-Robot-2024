@@ -59,6 +59,15 @@ public class LEDStrip extends SubsystemBase {
 
         ledStrip.setData(ledBuffer);
     }
+    /**
+     * Set all to color on a scale of zero to one
+     * @param r red on a scale of zero to one
+     * @param g green on a scale of zero to one
+     * @param b blue on a scale of zero to one
+     */
+    public void setAllToColor(double r, double g, double b) {
+        setAllToColor((int) (r * 255), (int) (g *255), (int) (b * 255)); 
+    }
 
     
     public void setToChristmasColorPattern() {
