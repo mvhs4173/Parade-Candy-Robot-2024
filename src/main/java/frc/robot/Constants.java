@@ -33,4 +33,23 @@ public final class Constants {
                                BL_DRIVE_MULTIPLIER = 2,
                                BR_DRIVE_MULTIPLIER = -2;
     public static final int TEAM_NUMBER = 4173;
+    public static final double LAUNCHER_CIM_MAX_SPEED = 5310.0; //rpm
+    public static final double PROJECTILE_VELOCITY = 1.0; //meterps
+    public static final double CIM_GEAR_RATIO = 26.0/15.0; //not real
+    public static final double WHEEL_DIAMETER = Units.inchesToMeters(5.0);
+
+    //
+    public static final double MOTOR_ROTATIONS_TO_VELOCITY = (26.0/15.0) * 5 * Math.PI ;
+
+    public static final double NORMAL_LAUNCHER_VOLTAGE = (PROJECTILE_VELOCITY / MOTOR_ROTATIONS_TO_VELOCITY) / LAUNCHER_CIM_MAX_SPEED * 12;
+    public static final double MAX_LAUNCHER_VOLTAGE = 12.0;
+
+    
+
+
+
+
+
+
+    
 }
